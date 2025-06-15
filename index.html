@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mason Airsoft</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="login-screen">
+        <div class="login-container">
+            <h1>Mason Airsoft</h1>
+            <h2>Admin Login</h2>
+            <input type="password" id="admin-password" placeholder="Enter Password">
+            <button id="login-button">Login</button>
+            <p id="login-error" class="error-message"></p>
+            <a href="#" id="mason-login-link">Not an admin? Click here!</a>
+        </div>
+    </div>
+
+    <div id="app-container" style="display: none;">
+        <header>
+            <h1 id="app-title">Mason Airsoft</h1>
+            <button id="logout-button">Logout</button>
+        </header>
+
+        <main>
+            <div id="admin-view" style="display: none;">
+                <h2>Admin Panel</h2>
+                <div class="main-grid-col-2">
+                    <div class="grid-section">
+                        <h3>Date Management</h3>
+                        <div class="date-proposal-section">
+                            <input type="date" id="admin-date-input">
+                            <button id="admin-propose-date-button">Propose Date</button>
+                        </div>
+                        <div id="admin-date-list" class="date-list"></div>
+                        
+                        <h3 class="top-margin">Points & Transactions</h3>
+                        <p>Mason's Points: <span id="admin-points-display">0</span></p>
+                        <button id="give-points-button">Give 10 Points (for attended match)</button>
+                        <h4 class="top-margin">Transaction History</h4>
+                        <div id="transaction-history" class="transaction-log"></div>
+                    </div>
+                    <div class="grid-section">
+                        <h3>Shop Management</h3>
+                        <form id="add-product-form">
+                            <h4>Add New Item</h4>
+                            <input type="text" id="product-name" placeholder="Product Name" required>
+                            <input type="url" id="product-image" placeholder="Image URL" required>
+                            <input type="number" id="product-points" placeholder="Points Cost" required min="1">
+                            <button type="submit">Add Product</button>
+                        </form>
+
+                        <h4 class="top-margin">Manage Existing Items</h4>
+                        <div id="manage-shop-container"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="mason-view" style="display: none;">
+                <div class="user-header">
+                    <h2>Welcome Mason!</h2>
+                    <h3>Your Points: <span id="mason-points-display">0</span></h3>
+                </div>
+                <div class="main-grid-col-3">
+                    <div class="grid-section">
+                        <h3>Battle Dates</h3>
+                        <div class="date-proposal-section">
+                            <input type="date" id="mason-date-input">
+                            <button id="mason-propose-date-button">Propose Date</button>
+                        </div>
+                        <div id="mason-date-list" class="date-list"></div>
+                    </div>
+                    <div class="grid-section">
+                        <h3>Point Shop</h3>
+                        <div id="shop-container" class="shop"></div>
+                    </div>
+                    <div class="grid-section">
+                        <h3>Your Cart</h3>
+                        <div id="cart-container">
+                            <div id="cart-items">
+                                <p>Your cart is empty.</p>
+                            </div>
+                            <div id="cart-footer" style="display:none;">
+                                <p>Total Cost: <span id="cart-total">0</span> Points</p>
+                                <p class="cart-notice">All products given at next match.</p>
+                                <button id="purchase-button">Purchase Cart?</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
