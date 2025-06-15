@@ -17,6 +17,14 @@ body {
     padding: 20px;
 }
 
+#loading-indicator {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    padding: 50px;
+    color: var(--primary-color);
+}
+
 /* --- Login & App Containers --- */
 #login-screen { width: 100%; display: flex; justify-content: center; align-items: center; min-height: 80vh; }
 .login-container { background: var(--container-bg); padding: 40px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); text-align: center; width: 300px; }
